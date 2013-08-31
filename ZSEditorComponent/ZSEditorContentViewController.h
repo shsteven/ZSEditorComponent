@@ -1,5 +1,5 @@
 //
-//  ZSViewController.h
+//  ZSEditorContentViewController.h
 //  ZSEditorComponent
 //
 //  Created by Steve on 31/8/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZSViewController : UIViewController
+@interface ZSEditorContentViewController : UICollectionViewController
 
 @end
