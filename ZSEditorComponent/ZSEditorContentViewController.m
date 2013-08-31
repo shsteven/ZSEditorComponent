@@ -25,7 +25,9 @@
     NSDictionary *dict =@{@"type":@"text",
                           @"text":@"A quick fox"};
     
-    self.contentItems = [@[dict, dict.copy, dict.copy, dict.copy] mutableCopy];
+    for (NSInteger i = 0; i < 50; i++) {
+        [self.contentItems addObject:[dict copy]];
+    }
 
 }
 
