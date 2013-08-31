@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZSEditorContentViewController : UICollectionViewController
+#import "ZSTextViewCollectionViewCell.h"
+
+@interface ZSEditorContentViewController : UICollectionViewController <ZSTextViewCollectionViewCellDelegate>
+
+@property (strong) NSMutableArray *contentItems;
 
 @end
+
