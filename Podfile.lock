@@ -1,10 +1,13 @@
 PODS:
+  - SHControlBlocks (1.1.0)
   - SHFastEnumerationProtocols (1.3.0)
 
 DEPENDENCIES:
+  - SHControlBlocks
   - SHFastEnumerationProtocols
 
 SPEC CHECKSUMS:
+  SHControlBlocks: 57e38b52e0f7ed4eef8f1c69e843c3893556d333
   SHFastEnumerationProtocols: b83587ae41c1990851bcd675da01636a1b2addc8
 
 COCOAPODS: 0.23.0

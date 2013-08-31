@@ -37,6 +37,10 @@
 
 
 
+
+#pragma mark - Collection view
+
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section {
     return [self.contentItems count];

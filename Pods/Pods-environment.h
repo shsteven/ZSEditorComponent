@@ -6,6 +6,12 @@
 // project.
 
 
+// SHControlBlocks
+#define COCOAPODS_POD_AVAILABLE_SHControlBlocks
+#define COCOAPODS_VERSION_MAJOR_SHControlBlocks 1
+#define COCOAPODS_VERSION_MINOR_SHControlBlocks 1
+#define COCOAPODS_VERSION_PATCH_SHControlBlocks 0
+
 // SHFastEnumerationProtocols
 #define COCOAPODS_POD_AVAILABLE_SHFastEnumerationProtocols
 #define COCOAPODS_VERSION_MAJOR_SHFastEnumerationProtocols 1
