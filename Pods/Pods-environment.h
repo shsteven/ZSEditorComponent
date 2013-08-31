@@ -6,6 +6,12 @@
 // project.
 
 
+// NSLogger
+#define COCOAPODS_POD_AVAILABLE_NSLogger
+#define COCOAPODS_VERSION_MAJOR_NSLogger 1
+#define COCOAPODS_VERSION_MINOR_NSLogger 1
+#define COCOAPODS_VERSION_PATCH_NSLogger 0
+
 // SHControlBlocks
 #define COCOAPODS_POD_AVAILABLE_SHControlBlocks
 #define COCOAPODS_VERSION_MAJOR_SHControlBlocks 1
