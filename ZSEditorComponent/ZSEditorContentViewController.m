@@ -66,19 +66,12 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UIFont *font = [UIFont boldSystemFontOfSize:18];
     NSDictionary *dict = self.contentItems[indexPath.row];
     
     NSString *type = dict[@"type"];
     
     if ([type isEqualToString:@"text"]) {
-        NSString *text = dict[@"text"];
-        CGSize size =[text sizeWithFont:font
-                      constrainedToSize:CGSizeMake(300, 10000)
-                          lineBreakMode:NSLineBreakByWordWrapping];
-        
-        size.width = 320;
-        return size;
+        return [ZSTextViewCollectionViewCell sizeWithText:dict[@"text"]];
     }
     return CGSizeMake(320, 200);
 }

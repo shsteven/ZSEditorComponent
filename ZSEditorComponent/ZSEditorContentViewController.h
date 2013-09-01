@@ -10,9 +10,19 @@
 
 #import "ZSTextViewCollectionViewCell.h"
 
+typedef NS_ENUM(NSInteger, ZSEditorContentItemType) {
+    kEditorContentItemTypeText = 0,
+    kEditorContentItemTypeImage
+};
+
 @interface ZSEditorContentViewController : UICollectionViewController <ZSTextViewCollectionViewCellDelegate>
 
 @property (strong) NSMutableArray *contentItems;
+
+/*
+ KVO
+ */
+@property (assign) ZSEditorContentItemType currentContentType;
 
 @end
 

@@ -15,11 +15,15 @@
 - (BOOL)textViewCellShouldBeginEditing: (ZSTextViewCollectionViewCell *)cell;
 - (void)textViewCellDidBeginEditing:(ZSTextViewCollectionViewCell *)cell;
 
+- (void)textViewCellDidChangeSize: (ZSTextViewCollectionViewCell *)cell;
+
 @end
 
-@interface ZSTextViewCollectionViewCell : UICollectionViewCell <UITextViewDelegate>
+@interface ZSTextViewCollectionViewCell : UICollectionViewCell <UITextViewDelegate, NSLayoutManagerDelegate>
 
 @property (strong) IBOutlet UITextView *textView;
 @property (weak) id <ZSTextViewCollectionViewCellDelegate> delegate;
+
++ (CGSize)sizeWithText: (NSString *)text;
 
 @end
