@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZSEditorContentViewController : UITableViewController
+@interface ZSEditorContentViewController : UITableViewController <UITextViewDelegate>
 
 @property (strong) NSMutableArray *contentTokens;
 

@@ -19,7 +19,7 @@
 
 + (CGFloat)heightWithText: (NSString *)text {
     CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:18.0]
-                   constrainedToSize:CGSizeMake(320, 10000)
+                   constrainedToSize:CGSizeMake(300, 10000)
                        lineBreakMode:NSLineBreakByWordWrapping];
     return size.height + 10.0;;
 }

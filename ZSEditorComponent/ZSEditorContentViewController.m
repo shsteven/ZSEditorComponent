@@ -58,8 +58,7 @@
     return [self.contentTokens count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *dict = self.contentTokens[indexPath.row];
     
     NSString *type = dict[@"type"];
@@ -71,13 +70,14 @@
         
         cell.textView.text = text;
         
+        cell.textView.tag = indexPath.row;
+        
         return cell;
         
     }
     
     static NSString *CellIdentifier = @"TextCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
     
     
     // Configure the cell...
@@ -164,5 +164,22 @@
 }
 
  */
+
+#pragma mark - Text View Delegate 
+
+- (void) textViewDidChange:(UITextView *)textView {
+    NSInteger index = textView.tag;
+    
+    NSMutableDictionary *dictionary = self.contentTokens[index];
+    
+    dictionary[@"text"] = textView.text;
+    
+    self.contentTokens[index] = dictionary;
+    
+    [self.tableView beginUpdates];
+    [self.tableView endUpdates];
+}
+
+
 
 @end
