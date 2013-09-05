@@ -13,5 +13,6 @@
 @property (strong) IBOutlet UITextView *textView;
 
 + (CGFloat)heightWithText: (NSString *)text;
++ (CGFloat)heightWithToken: (NSDictionary *)token;
 
 @end

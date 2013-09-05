@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ZSEditorViewController;
 
 @interface ZSEditorContentViewController : UITableViewController <UITextViewDelegate>
 
 @property (strong) NSMutableArray *contentTokens;
-
+@property (weak) ZSEditorViewController *enclosingViewController;
 @end

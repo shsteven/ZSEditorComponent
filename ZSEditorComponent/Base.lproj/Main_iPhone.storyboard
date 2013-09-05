@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3734.1"/>
     </dependencies>
     <scenes>
-        <!--Editor View Controller-->
+        <!--Editor View Controller - Editor-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ZSEditorViewController" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="v4u-Xk-m7g" kind="embed" id="Sqy-12-OQW"/>
+                                    <segue destination="v4u-Xk-m7g" kind="embed" identifier="EmbedContentView" id="Sqy-12-OQW"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dE2-KM-2a7" userLabel="Bar">
@@ -66,39 +66,40 @@
                             <constraint firstAttribute="trailing" secondItem="dE2-KM-2a7" secondAttribute="trailing" id="jHL-Ie-g0S"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="DdJ-1y-pQb"/>
+                    <navigationItem key="navigationItem" title="Editor" id="DdJ-1y-pQb"/>
                     <connections>
                         <outlet property="keyboardHeight" destination="YXX-SU-HWO" id="cea-Aa-AhB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="686" y="403"/>
+            <point key="canvasLocation" x="665" y="537"/>
         </scene>
         <!--Editor Content View Controller-->
         <scene sceneID="ZxD-Tz-mze">
             <objects>
                 <tableViewController id="v4u-Xk-m7g" customClass="ZSEditorContentViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="22" sectionFooterHeight="22" id="FZw-20-LjV">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="76" sectionHeaderHeight="22" sectionFooterHeight="22" id="FZw-20-LjV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="438"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TextCell" rowHeight="76" id="aQA-hO-SUw" customClass="ZSTextTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" showsReorderControl="YES" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="TextCell" rowHeight="76" id="aQA-hO-SUw" customClass="ZSTextTableViewCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="76"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aQA-hO-SUw" id="CWA-IA-eNG">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="76"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nz1-bU-66t">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nz1-bU-66t">
+                                            <rect key="frame" x="20" y="0.0" width="280" height="76"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <inset key="scrollIndicatorInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="280" id="7ru-g7-x7d"/>
+                                            </constraints>
                                             <attributedString key="attributedText">
-                                                <fragment>
-                                                    <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <fragment content="Text view">
                                                     <attributes>
                                                         <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
@@ -106,16 +107,17 @@
                                                 </fragment>
                                             </attributedString>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                             <connections>
                                                 <outlet property="delegate" destination="v4u-Xk-m7g" id="Jhi-j6-3gA"/>
                                             </connections>
                                         </textView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="nz1-bU-66t" firstAttribute="top" secondItem="CWA-IA-eNG" secondAttribute="top" id="F9A-g3-mHw"/>
-                                        <constraint firstAttribute="trailing" secondItem="nz1-bU-66t" secondAttribute="trailing" id="kcD-28-otr"/>
-                                        <constraint firstItem="nz1-bU-66t" firstAttribute="leading" secondItem="CWA-IA-eNG" secondAttribute="leading" id="p0v-3L-ON3"/>
-                                        <constraint firstAttribute="bottom" secondItem="nz1-bU-66t" secondAttribute="bottom" id="rbl-zG-X3p"/>
+                                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="nz1-bU-66t" secondAttribute="trailing" priority="588" constant="20" symbolic="YES" id="3If-iR-lz8"/>
+                                        <constraint firstItem="nz1-bU-66t" firstAttribute="top" secondItem="CWA-IA-eNG" secondAttribute="top" id="IMA-2e-xNm"/>
+                                        <constraint firstAttribute="bottom" secondItem="nz1-bU-66t" secondAttribute="bottom" id="qSz-Ut-Itv"/>
+                                        <constraint firstItem="nz1-bU-66t" firstAttribute="leading" relation="lessThanOrEqual" secondItem="CWA-IA-eNG" secondAttribute="leading" priority="626" constant="20" symbolic="YES" id="tXa-XR-Aul"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -131,7 +133,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0W-a2-Xal" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080" y="378"/>
+            <point key="canvasLocation" x="1073" y="596"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8gh-f8-wJo">

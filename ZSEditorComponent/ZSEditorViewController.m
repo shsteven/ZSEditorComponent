@@ -7,6 +7,7 @@
 //
 
 #import "ZSEditorViewController.h"
+#import "ZSEditorContentViewController.h"
 
 @interface ZSEditorViewController ()
 
@@ -24,6 +25,13 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.currentOrientation = [UIApplication sharedApplication].statusBarOrientation;
     [self observeKeyboard];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"EmbedContentView"]) {
+        ZSEditorContentViewController *vc = segue.destinationViewController;
+        vc.enclosingViewController = self;
+    }
 }
 
 - (void)dealloc {

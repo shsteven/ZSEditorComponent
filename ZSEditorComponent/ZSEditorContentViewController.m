@@ -10,6 +10,8 @@
 #import "ZSTextTableViewCell.h"
 #import "ZSMarkdownToken.h"
 #import "ZSMarkdownProcessor.h"
+#import <SHFastEnumerationProtocols/SHFastEnumerationProtocols.h>
+#import "ZSEditorViewController.h"
 
 @interface ZSEditorContentViewController () {
 
@@ -27,15 +29,20 @@
 {
     [super viewDidLoad];
     
+    self.enclosingViewController.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
     self.textProcessor = [[ZSMarkdownProcessor alloc] init];
     
 #warning Testing
     NSString *path = [[NSBundle mainBundle] pathForResource:@"main" ofType:@"text"];
     NSString *text = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     
-    self.contentTokens = [[self.textProcessor tokensFromText:text] mutableCopy];
-    
-    
+    NSArray *tokens = [self.textProcessor tokensFromText:text];
+    // Make the leaves mutable
+    tokens = [tokens SH_map:^id(id obj) {
+        return [obj mutableCopy];
+    }];
+    self.contentTokens = [tokens mutableCopy];
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,7 +71,8 @@
     NSString *type = dict[@"type"];
     if ([kVisibleTypes containsObject:type]) {
         static NSString *TextCellIdentifier = @"TextCell";
-        ZSTextTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TextCellIdentifier forIndexPath:indexPath];
+        ZSTextTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TextCellIdentifier
+                                                                    forIndexPath:indexPath];
         
         NSString *text = dict[@"text"];
         
@@ -114,14 +122,9 @@
     return 0.0;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleNone;
 }
-*/
 
 /*
 // Override to support editing the table view.
@@ -137,21 +140,21 @@
 }
 */
 
-/*
+
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+#warning TODO
 }
-*/
 
-/*
+
+
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-*/
 
 /*
 #pragma mark - Navigation
@@ -173,8 +176,6 @@
     NSMutableDictionary *dictionary = self.contentTokens[index];
     
     dictionary[@"text"] = textView.text;
-    
-    self.contentTokens[index] = dictionary;
     
     [self.tableView beginUpdates];
     [self.tableView endUpdates];

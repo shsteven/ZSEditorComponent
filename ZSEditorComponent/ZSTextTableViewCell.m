@@ -10,18 +10,23 @@
 
 @implementation ZSTextTableViewCell
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
++ (CGFloat)heightWithText: (NSString *)text {
+    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:14.0]
+                   constrainedToSize:CGSizeMake(280, 100000)
+                       lineBreakMode:NSLineBreakByWordWrapping];
+    return size.height + 20.0;;
 }
 
-+ (CGFloat)heightWithText: (NSString *)text {
-    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:18.0]
-                   constrainedToSize:CGSizeMake(300, 10000)
++ (CGFloat)heightWithToken: (NSDictionary *)token {
+    NSString *text = token[@"text"];
+    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:14.0]
+                   constrainedToSize:CGSizeMake(280, 100000)
                        lineBreakMode:NSLineBreakByWordWrapping];
-    return size.height + 10.0;;
+    
+    // Height should be larger than textView.contentSize.height
+    // So that textview's scrolling won't interfere
+
+    return size.height + 20.0;
 }
 
 @end
