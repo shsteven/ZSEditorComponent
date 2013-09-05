@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		10E35CDC947A499C8F9AD4D6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7701B4C71C784224B2E836FD /* libPods.a */; };
+		AA36464017D87A420035325F /* ZSTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA36463F17D87A420035325F /* ZSTextTableViewCell.m */; };
+		AA36464517D87E140035325F /* ZSMarkdownToken.m in Sources */ = {isa = PBXBuildFile; fileRef = AA36464417D87E140035325F /* ZSMarkdownToken.m */; };
+		AA36464817D87F030035325F /* ZSMarkdownProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = AA36464717D87F030035325F /* ZSMarkdownProcessor.m */; };
+		AA36464A17D880960035325F /* marked.js in Sources */ = {isa = PBXBuildFile; fileRef = AA36464917D880960035325F /* marked.js */; };
+		AA36464C17D880A70035325F /* marked.js in Resources */ = {isa = PBXBuildFile; fileRef = AA36464917D880960035325F /* marked.js */; };
 		AA4B917A17D19AFC005E06D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4B917917D19AFC005E06D8 /* Foundation.framework */; };
 		AA4B917C17D19AFC005E06D8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4B917B17D19AFC005E06D8 /* CoreGraphics.framework */; };
 		AA4B917E17D19AFC005E06D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4B917D17D19AFC005E06D8 /* UIKit.framework */; };
@@ -23,9 +28,7 @@
 		AA4B91A617D19AFC005E06D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA4B91A417D19AFC005E06D8 /* InfoPlist.strings */; };
 		AA4B91A817D19AFC005E06D8 /* ZSEditorComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4B91A717D19AFC005E06D8 /* ZSEditorComponentTests.m */; };
 		AA4D53CF17D19D2400ADB0B7 /* ZSEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D53CE17D19D2400ADB0B7 /* ZSEditorViewController.m */; };
-		AA4D53D217D1A0D000ADB0B7 /* ZSEditorContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D53D117D1A0D000ADB0B7 /* ZSEditorContentViewController.m */; };
-		AA4D53D617D1A5E300ADB0B7 /* ZSTextViewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D53D517D1A5E300ADB0B7 /* ZSTextViewCollectionViewCell.m */; };
-		AA4D53D917D1AA9600ADB0B7 /* ZSImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D53D817D1AA9600ADB0B7 /* ZSImageCollectionViewCell.m */; };
+		AA6376B717D879BE002FAD06 /* ZSEditorContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6376B617D879BE002FAD06 /* ZSEditorContentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,13 @@
 
 /* Begin PBXFileReference section */
 		7701B4C71C784224B2E836FD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA36463E17D87A420035325F /* ZSTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSTextTableViewCell.h; sourceTree = "<group>"; };
+		AA36463F17D87A420035325F /* ZSTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSTextTableViewCell.m; sourceTree = "<group>"; };
+		AA36464317D87E140035325F /* ZSMarkdownToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSMarkdownToken.h; sourceTree = "<group>"; };
+		AA36464417D87E140035325F /* ZSMarkdownToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSMarkdownToken.m; sourceTree = "<group>"; };
+		AA36464617D87F030035325F /* ZSMarkdownProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSMarkdownProcessor.h; sourceTree = "<group>"; };
+		AA36464717D87F030035325F /* ZSMarkdownProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSMarkdownProcessor.m; sourceTree = "<group>"; };
+		AA36464917D880960035325F /* marked.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = marked.js; path = js/marked/lib/marked.js; sourceTree = "<group>"; };
 		AA4B917617D19AFC005E06D8 /* ZSEditorComponent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZSEditorComponent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4B917917D19AFC005E06D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AA4B917B17D19AFC005E06D8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,12 +70,8 @@
 		AA4B91A717D19AFC005E06D8 /* ZSEditorComponentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSEditorComponentTests.m; sourceTree = "<group>"; };
 		AA4D53CD17D19D2400ADB0B7 /* ZSEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSEditorViewController.h; sourceTree = "<group>"; };
 		AA4D53CE17D19D2400ADB0B7 /* ZSEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSEditorViewController.m; sourceTree = "<group>"; };
-		AA4D53D017D1A0D000ADB0B7 /* ZSEditorContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSEditorContentViewController.h; sourceTree = "<group>"; };
-		AA4D53D117D1A0D000ADB0B7 /* ZSEditorContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSEditorContentViewController.m; sourceTree = "<group>"; };
-		AA4D53D417D1A5E300ADB0B7 /* ZSTextViewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSTextViewCollectionViewCell.h; sourceTree = "<group>"; };
-		AA4D53D517D1A5E300ADB0B7 /* ZSTextViewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSTextViewCollectionViewCell.m; sourceTree = "<group>"; };
-		AA4D53D717D1AA9600ADB0B7 /* ZSImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSImageCollectionViewCell.h; sourceTree = "<group>"; };
-		AA4D53D817D1AA9600ADB0B7 /* ZSImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSImageCollectionViewCell.m; sourceTree = "<group>"; };
+		AA6376B517D879BE002FAD06 /* ZSEditorContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSEditorContentViewController.h; sourceTree = "<group>"; };
+		AA6376B617D879BE002FAD06 /* ZSEditorContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSEditorContentViewController.m; sourceTree = "<group>"; };
 		FA0DA1A4FF5F44109501ED55 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -94,9 +100,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA36464217D87E080035325F /* Markdown Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA36464317D87E140035325F /* ZSMarkdownToken.h */,
+				AA36464417D87E140035325F /* ZSMarkdownToken.m */,
+				AA36464617D87F030035325F /* ZSMarkdownProcessor.h */,
+				AA36464717D87F030035325F /* ZSMarkdownProcessor.m */,
+			);
+			name = "Markdown Models";
+			path = "Source/Markdown Models";
+			sourceTree = SOURCE_ROOT;
+		};
+		AA36464B17D880970035325F /* js */ = {
+			isa = PBXGroup;
+			children = (
+				AA36464917D880960035325F /* marked.js */,
+			);
+			name = js;
+			sourceTree = "<group>";
+		};
 		AA4B916D17D19AFC005E06D8 = {
 			isa = PBXGroup;
 			children = (
+				AA36464B17D880970035325F /* js */,
 				AA4B917F17D19AFC005E06D8 /* ZSEditorComponent */,
 				AA4B91A117D19AFC005E06D8 /* ZSEditorComponentTests */,
 				AA4B917817D19AFC005E06D8 /* Frameworks */,
@@ -135,8 +162,9 @@
 				AA4B918E17D19AFC005E06D8 /* Main_iPad.storyboard */,
 				AA4D53CD17D19D2400ADB0B7 /* ZSEditorViewController.h */,
 				AA4D53CE17D19D2400ADB0B7 /* ZSEditorViewController.m */,
-				AA4D53D017D1A0D000ADB0B7 /* ZSEditorContentViewController.h */,
-				AA4D53D117D1A0D000ADB0B7 /* ZSEditorContentViewController.m */,
+				AA6376B517D879BE002FAD06 /* ZSEditorContentViewController.h */,
+				AA6376B617D879BE002FAD06 /* ZSEditorContentViewController.m */,
+				AA36464217D87E080035325F /* Markdown Models */,
 				AA4D53D317D1A5C400ADB0B7 /* Cells */,
 				AA4B919417D19AFC005E06D8 /* Images.xcassets */,
 				AA4B918017D19AFC005E06D8 /* Supporting Files */,
@@ -176,10 +204,8 @@
 		AA4D53D317D1A5C400ADB0B7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				AA4D53D417D1A5E300ADB0B7 /* ZSTextViewCollectionViewCell.h */,
-				AA4D53D517D1A5E300ADB0B7 /* ZSTextViewCollectionViewCell.m */,
-				AA4D53D717D1AA9600ADB0B7 /* ZSImageCollectionViewCell.h */,
-				AA4D53D817D1AA9600ADB0B7 /* ZSImageCollectionViewCell.m */,
+				AA36463E17D87A420035325F /* ZSTextTableViewCell.h */,
+				AA36463F17D87A420035325F /* ZSTextTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -269,6 +295,7 @@
 				AA4B919017D19AFC005E06D8 /* Main_iPad.storyboard in Resources */,
 				AA4B919517D19AFC005E06D8 /* Images.xcassets in Resources */,
 				AA4B918D17D19AFC005E06D8 /* Main_iPhone.storyboard in Resources */,
+				AA36464C17D880A70035325F /* marked.js in Resources */,
 				AA4B918417D19AFC005E06D8 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,12 +348,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA4D53D617D1A5E300ADB0B7 /* ZSTextViewCollectionViewCell.m in Sources */,
-				AA4D53D917D1AA9600ADB0B7 /* ZSImageCollectionViewCell.m in Sources */,
-				AA4D53D217D1A0D000ADB0B7 /* ZSEditorContentViewController.m in Sources */,
+				AA36464A17D880960035325F /* marked.js in Sources */,
+				AA6376B717D879BE002FAD06 /* ZSEditorContentViewController.m in Sources */,
 				AA4B918617D19AFC005E06D8 /* main.m in Sources */,
+				AA36464017D87A420035325F /* ZSTextTableViewCell.m in Sources */,
+				AA36464817D87F030035325F /* ZSMarkdownProcessor.m in Sources */,
 				AA4B918A17D19AFC005E06D8 /* ZSAppDelegate.m in Sources */,
 				AA4D53CF17D19D2400ADB0B7 /* ZSEditorViewController.m in Sources */,
+				AA36464517D87E140035325F /* ZSMarkdownToken.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

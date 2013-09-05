@@ -2,17 +2,14 @@
 //  ZSEditorContentViewController.h
 //  ZSEditorComponent
 //
-//  Created by Steve on 31/8/13.
+//  Created by Steve on 5/9/13.
 //  Copyright (c) 2013 MagicalBits. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-#import "ZSTextViewCollectionViewCell.h"
-
-@interface ZSEditorContentViewController : UICollectionViewController <ZSTextViewCollectionViewCellDelegate>
+@interface ZSEditorContentViewController : UITableViewController
 
 @property (strong) NSMutableArray *contentItems;
 
 @end
-
