@@ -20,6 +20,7 @@
 
 @end
 
+#define kVisibleTypes [NSSet setWithArray: @[@"paragraph", @"heading", @"html", @"text", @"code"]]
 @implementation ZSEditorContentViewController
 
 - (void)viewDidLoad
@@ -28,9 +29,11 @@
     
     self.textProcessor = [[ZSMarkdownProcessor alloc] init];
     
-    NSString *text =@"> This is markdown!";
+#warning Testing
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"main" ofType:@"text"];
+    NSString *text = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     
-    self.contentItems = [[self.textProcessor tokensFromText:text] mutableCopy];
+    self.contentTokens = [[self.textProcessor tokensFromText:text] mutableCopy];
     
     
 }
@@ -52,15 +55,15 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.contentItems count];
+    return [self.contentTokens count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *dict = self.contentItems[indexPath.row];
+    NSDictionary *dict = self.contentTokens[indexPath.row];
     
     NSString *type = dict[@"type"];
-    if ([type isEqualToString:@"paragraph"]) {
+    if ([kVisibleTypes containsObject:type]) {
         static NSString *TextCellIdentifier = @"TextCell";
         ZSTextTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TextCellIdentifier forIndexPath:indexPath];
         
@@ -84,10 +87,10 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *dict = self.contentItems[indexPath.row];
+    NSDictionary *dict = self.contentTokens[indexPath.row];
     NSString *type = dict[@"type"];
 
-    if ([type isEqualToString:@"paragraph"]) {
+    if ([kVisibleTypes containsObject:type]) {
         NSString *text = dict[@"text"];
         
         CGFloat height = [ZSTextTableViewCell heightWithText:text];
@@ -98,10 +101,10 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *dict = self.contentItems[indexPath.row];
+    NSDictionary *dict = self.contentTokens[indexPath.row];
     NSString *type = dict[@"type"];
     
-    if ([type isEqualToString:@"paragraph"]) {
+    if ([kVisibleTypes containsObject:type]) {
         NSString *text = dict[@"text"];
         
         CGFloat height = [ZSTextTableViewCell heightWithText:text];

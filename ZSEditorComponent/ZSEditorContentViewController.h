@@ -10,6 +10,6 @@
 
 @interface ZSEditorContentViewController : UITableViewController
 
-@property (strong) NSMutableArray *contentItems;
+@property (strong) NSMutableArray *contentTokens;
 
 @end
