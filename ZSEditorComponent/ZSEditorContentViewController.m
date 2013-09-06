@@ -170,6 +170,21 @@
 
 #pragma mark - Text View Delegate 
 
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    
+    self.activeTextView = textView;
+    
+    return YES;
+}
+
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView {
+    
+    if (textView == self.activeTextView)
+        self.activeTextView = nil;
+    
+    return YES;
+}
+
 - (void) textViewDidChange:(UITextView *)textView {
     NSInteger index = textView.tag;
     

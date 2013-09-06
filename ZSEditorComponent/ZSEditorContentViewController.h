@@ -13,4 +13,6 @@
 
 @property (strong) NSMutableArray *contentTokens;
 @property (weak) ZSEditorViewController *enclosingViewController;
+
+@property (weak) UITextView *activeTextView;
 @end
