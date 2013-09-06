@@ -39,9 +39,7 @@
     
     NSArray *tokens = [self.textProcessor tokensFromText:text];
     // Make the leaves mutable
-    tokens = [tokens SH_map:^id(id obj) {
-        return [obj mutableCopy];
-    }];
+    tokens = [tokens mutableArrayValueForKey:@"self"];
     self.contentTokens = [tokens mutableCopy];
 }
 
