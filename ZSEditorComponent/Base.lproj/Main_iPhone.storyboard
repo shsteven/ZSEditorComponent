@@ -114,10 +114,10 @@
                                         </textView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="nz1-bU-66t" secondAttribute="trailing" priority="588" constant="20" symbolic="YES" id="3If-iR-lz8"/>
+                                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="nz1-bU-66t" secondAttribute="trailing" priority="500" constant="20" symbolic="YES" id="3If-iR-lz8"/>
                                         <constraint firstItem="nz1-bU-66t" firstAttribute="top" secondItem="CWA-IA-eNG" secondAttribute="top" id="IMA-2e-xNm"/>
                                         <constraint firstAttribute="bottom" secondItem="nz1-bU-66t" secondAttribute="bottom" id="qSz-Ut-Itv"/>
-                                        <constraint firstItem="nz1-bU-66t" firstAttribute="leading" relation="lessThanOrEqual" secondItem="CWA-IA-eNG" secondAttribute="leading" priority="626" constant="20" symbolic="YES" id="tXa-XR-Aul"/>
+                                        <constraint firstItem="nz1-bU-66t" firstAttribute="leading" relation="lessThanOrEqual" secondItem="CWA-IA-eNG" secondAttribute="leading" priority="500" constant="20" symbolic="YES" id="tXa-XR-Aul"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
